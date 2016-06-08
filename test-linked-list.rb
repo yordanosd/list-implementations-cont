@@ -1,9 +1,10 @@
 require './linked-list.rb'
 
 # Initializing a Linked List with a node containing value (5)
-ll = LinkedList.new(5)
+ll = LinkedList.new
 
 # Adding Elements to Linked List
+ll.add(5)
 ll.add(10)
 ll.add(200)
 
