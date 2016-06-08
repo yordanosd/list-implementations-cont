@@ -13,13 +13,16 @@ class Node
 end
 
 class LinkedList
-   def initialize(val)
-       # Initialize a new node at the head
-       @head = Node.new(val,nil)
-       @size = 1
+   def initialize
+     @head = nil
+     @size = 0
    end
 
    def add(value)
+       if @size == 0
+         @head = Node.new(value,nil)
+         @size += 1
+       end
        # Traverse to the end of the list
        # And insert a new node over there with the specified value
        current = @head
