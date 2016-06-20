@@ -97,4 +97,48 @@ class LinkedList
      return max
    end
 
+   def sort
+     length = @size
+     last = nextNode(@head,length)
+
+     @size.times do |count|
+       min = @head
+       current = @head
+       pre_min = nil
+
+       until(current.next_node == last.next_node)
+         previous = current
+         current = current.next_node
+         if(current.value < min.value)
+           min = current
+           pre_min = previous
+         end
+       end
+
+     if (min == last)
+      if(min == @head)
+        add(min.value)
+        @head = min.next_node
+      else
+       length -= 1
+       add(min.value)
+        pre_min.next_node = min.next_node
+      end
+    else
+     min == @head ? @head = min.next_node : pre_min.next_node = min.next_node
+     add(min.value)
+     puts min.value
+    end
+    end
+     self
+   end
+
+   def nextNode(node,num)
+     until(num == 1)
+       node = node.next_node
+       num -= 1
+     end
+     return node
+   end
+
 end
