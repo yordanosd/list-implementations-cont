@@ -14,7 +14,9 @@ class Lotto
 
   def display_ticket
     puts @ticket.display
-    @ticket.sort.display
+    puts @ticket.reverse.display
+    puts @ticket.sort.display
+    # @ticket.sort.display
   end
 end
 

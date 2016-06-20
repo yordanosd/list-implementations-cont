@@ -99,6 +99,7 @@ class LinkedList
 
    def sort
      length = @size
+     puts @size
      last = nextNode(@head,length)
 
      @size.times do |count|
@@ -130,6 +131,18 @@ class LinkedList
      puts min.value
     end
     end
+     self
+   end
+
+   def reverse
+     length = @size - 1
+     last = nextNode(@head,@size)
+     current = @head
+     length.times do |count|
+       current = current.next_node if length < 5
+     end
+     @head = last
+     @size = length + 1
      self
    end
 
