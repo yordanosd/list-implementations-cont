@@ -13,10 +13,9 @@ class Lotto
   end
 
   def display_ticket
-    puts @ticket.display
-    puts @ticket.reverse.display
-    puts @ticket.sort.display
-    # @ticket.sort.display
+    puts "original ticket: #{@ticket.display}"
+    puts "reversed ticket: #{@ticket.reverse.display}"
+    puts "  sorted ticket: #{@ticket.sort.display}"
   end
 end
 

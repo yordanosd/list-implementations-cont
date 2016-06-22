@@ -128,7 +128,6 @@ class LinkedList
     else
      min == @head ? @head = min.next_node : pre_min.next_node = min.next_node
      add(min.value)
-     puts min.value
     end
     end
      self
@@ -136,12 +135,18 @@ class LinkedList
 
    def reverse
      length = @size - 1
-     last = nextNode(@head,@size)
+     last= nextNode(@head,@size)
+    #  puts "Tail ==> length: #{@size} ==> #{last.value} --->"
+    #  puts "enter loop"
      current = @head
      length.times do |count|
-       current = current.next_node if length < 5
+       current_last = nextNode(@head,(length - count))
+        add(current_last.value)
+        # puts "length: #{length - count} ==> #{current_last.value} --->"
+        # puts self.display
      end
      @head = last
+    #  puts "@head ==> #{last.value}"
      @size = length + 1
      self
    end
